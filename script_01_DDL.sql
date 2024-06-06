@@ -15,6 +15,7 @@
     UUID bIdcCliente
          b_idc_cliente
 */
+/*Comadandos DDL desse escript: (create database e create table)*/
 
 /*----------CRIANDO BANCO DE DADOS-----------*/
 CREATE DATABASE IF NOT EXISTS curso_db;
@@ -27,3 +28,7 @@ create table if not exists cliente(
     s_cpf_cliente varchar(11) not null,
     d_nasc_cliente datetime
 );
+
+/*Descrever a estrutura da tabela*/
+desc nome_tabela;
+describe nome_tabela;
