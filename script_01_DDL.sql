@@ -30,5 +30,5 @@ create table if not exists cliente(
 );
 
 /*Descrever a estrutura da tabela*/
-desc nome_tabela;
-describe nome_tabela;
+desc <nome_tabela>;
+describe <nome_tabela>;
