@@ -24,7 +24,7 @@ alter table <nome_tabela> drop column <nome_da_linha>;
 alter table cliente drop column telefone_cliente;
 
 /*===================================================================================*/
-/*Deletar tableas*/
+/*Deletar tablelas*/
 drop table <nome_tabela>;
 /*===================================================================================*/
 
