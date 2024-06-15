@@ -9,7 +9,7 @@
     de uma tabela
 */
 /*Inserir múltiplos valores em uma tabela usando INSERT e SELECT */
-insert int <nome_tabela_02>
+insert into <nome_tabela_02>
     (campo_a, campo_b, campo_c)
     select campo_aa, campo_bb, campo_cc from <nome_tabela_01>;
 /* O trecho de código acima realiza em consulta na tabela_01 e inseri os valore 
