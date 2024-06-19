@@ -31,15 +31,15 @@ ENGINE = InnoDB;
 -- Table `db_loja`.`cliente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_loja`.`cliente` (
-  `id_cliente` INT NOT NULL,
+  `id_cliente` INT NOT NULL auto_increment,
   `s_nome_cliente` VARCHAR(50) NOT NULL,
-  `s_cpf_cliente` VARCHAR(11) NOT NULL,
-  `d_nacs_cliente` DATE NULL,
-  `i_tipo_clientel` INT NULL,
+  `s_cpf_cliente` VARCHAR(11) NOT NULL unique,
+  `d_nasc_cliente` DATE NULL,
+  `i_tipo_cliente` INT NULL,
   PRIMARY KEY (`id_cliente`),
-  INDEX `fk_cliente_tipocliente_idx` (`i_tipo_clientel` ASC) VISIBLE,
+  INDEX `fk_cliente_tipocliente_idx` (`i_tipo_cliente` ASC) VISIBLE,
   CONSTRAINT `fk_cliente_tipocliente`
-    FOREIGN KEY (`i_tipo_clientel`)
+    FOREIGN KEY (`i_tipo_cliente`)
     REFERENCES `db_loja`.`tipocliente` (`id_tipo_tipocliente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
