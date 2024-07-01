@@ -34,3 +34,19 @@ inner join
 on c.i_tipo_cliente = t.id_tipo_tipocliente
 group by 
 i_tipo_cliente;
+
+/*SELECT com GROUP BY HAVING*/
+SELECT <campo> FROM <nome_da_tabela> GROUP BY <campo> HAVING <campo_B> {expressão lógica} valor;
+select i_tipo_cliente from cliente group by i_tipo_cliente having i_tipo_cliente > 1;
+
+select 
+ c.i_tipo_cliente as CD_TIPO,
+ t.s_desc_tipocliente as TIPO,
+ count(c.i_tipo_cliente) as QTD
+from 
+cliente c
+inner join 
+ tipocliente t
+on c.i_tipo_cliente = t.id_tipo_tipocliente
+group by  i_tipo_cliente
+having t.s_desc_tipocliente != 'PJ';
