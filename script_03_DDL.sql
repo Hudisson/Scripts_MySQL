@@ -1,4 +1,4 @@
-/* DDL Linguagem de Definição de Dados*/
+    /* DDL Linguagem de Definição de Dados*/
 /*
     CREATE TABLE, CREATE INDEX, ALTER TABLE, DROP
     TABLE, DROP VIEW e DROP INDEX;
