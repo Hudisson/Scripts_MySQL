@@ -100,3 +100,34 @@ DELIMITER ;
 
 call idade(4,@idadeCliente, @maiorIdade);
 select @idadeCliente as 'Idade',@maiorIdade as "Maior Idade";
+
+/*loop While */
+
+DELIMITER @@
+CREATE PROCEDURE looWhile(OUT soma int)
+BEGIN
+    DECLARE variavel_A tipo DEFAULT 0;
+    WHILE(variavel_A < 10)DO
+        variavel_A = variavel_A + 1;
+    END WHILE;
+    SET soma = variavel_A;
+END @@
+DELIMITER ;
+
+CALL looWhile(@res_soma);
+SELECT @res_soma;
+
+/*LOOP */
+DELIMITER @@
+CREATE PROCEDURE outroLoop(IN max int, OUT soma int)
+BEGIN
+    DECLARE variavel_A int DEFAULT 0;
+    nomeLoop LOOP:
+        IF(variavel_A > max) THEN
+            LEAVE nomeLoop;
+        END IF;
+        SET variavel_A = variavel_A + 1;
+    END LOOP;
+    SET soma = variavel_A;
+END @@
+DELIMITER ;
