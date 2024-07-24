@@ -131,3 +131,27 @@ BEGIN
     SET soma = variavel_A;
 END @@
 DELIMITER ;
+
+/*CURSOR*/
+DELIMITER @@
+CREATE PROCEDURE testeCursor(OUT soma float(10,2))
+BEGIN
+    DECLARE valor_venda float(10,2) DEFAULT 0;
+    DECLARE endLoop int DEFAULT 0;
+
+    DECLARE meucursor CURSOR FOR SELECT f_valor_venda FROM venda;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET endLoop = 1;
+
+    SET soma = 0;
+    
+    OPEN meucursor;
+    WHILE(endLoop != 1)DO
+        FETCH meucursor INTO valor_venda;
+        SET soma = soma + valor_venda;
+    END WHILE;
+   
+END @@
+DELIMITER ;
+
+CALL testeCursor(@rSoma);
+SELECT @rSoma;
